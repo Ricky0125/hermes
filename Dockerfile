@@ -7,7 +7,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 WORKDIR /app
 
-RUN pip install --no-cache-dir "hermes-agent[all]"
+RUN pip install --no-cache-dir --timeout 120 hermes-agent && \
+    pip install --no-cache-dir --timeout 120 "hermes-agent[gateway]"
 
 ENV HERMES_HOME=/data
 VOLUME [ "/data" ]
