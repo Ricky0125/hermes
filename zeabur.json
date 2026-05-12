@@ -1,0 +1,10 @@
+{
+    "name": "hermes-agent",
+    "description": "Hermes AI agent on Zeabur",
+    "env": {
+        "HERMES_HOME": { "value": "/data" },
+        "OPENROUTER_API_KEY": { "description": "OpenRouter API key" },
+        "TELEGRAM_BOT_TOKEN": { "description": "Telegram bot token" },
+        "HERMES_TELEGRAM_ALLOWED_CHATS": { "description": "Comma-separated chat IDs" }
+    }
+}
