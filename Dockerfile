@@ -23,6 +23,9 @@ COPY --from=builder /usr/local/lib/python3.11/site-packages /usr/local/lib/pytho
 COPY --from=builder /usr/local/bin /usr/local/bin
 
 ENV HERMES_HOME=/data
+ENV TELEGRAM_WEBHOOK_URL=https://baa.zeabur.app/telegram
+ENV TELEGRAM_WEBHOOK_PORT=8080
+ENV API_SERVER_PORT=8080
 VOLUME [ "/data" ]
 EXPOSE 8080
 
