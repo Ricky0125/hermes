@@ -2,13 +2,13 @@
 FROM python:3.11-slim-bookworm
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    curl git ffmpeg gcc python3-dev tini && \
+    curl git tini && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
-RUN pip install --no-cache-dir --timeout 120 hermes-agent && \
-    pip install --no-cache-dir --timeout 120 "hermes-agent[gateway]"
+RUN pip install --no-cache-dir --timeout 300 hermes-agent && \
+    pip install --no-cache-dir --timeout 300 hermes-agent[gateway]
 
 ENV HERMES_HOME=/data
 VOLUME [ "/data" ]
